@@ -25,9 +25,8 @@ public class PlayerController {
 		return (List<Player>) repository.findAll();
 	}
 
-	@PostMapping("/players/{id}")
-	Player newPlayer(@RequestBody String id) {
-		Player player = new Player(id);
+	@PostMapping("/players")
+	Player newPlayer(@RequestBody Player player) {
 		return repository.save(player);
 	}
 
