@@ -1,5 +1,6 @@
 package com.reki;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +9,13 @@ public class Poker2Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Poker2Application.class, args);
+		
+		Baraja baraja = new Baraja();
+		Hand playerHand = new Hand(baraja);
+		Hand computerHand = new Hand(baraja);
+		playerHand.compara(playerHand.mano, computerHand.mano);
+		
+		
 	}
 
 }
