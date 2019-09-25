@@ -57,13 +57,13 @@ public class Hand {
 				System.out.println("Tienes repoker de " + num);
 				break;
 			}
-		}else {
-			if(dobleRepes>repes) {
-				System.out.println("Tens un full de " + num2 + " i " +num);
-			}else {
-				System.out.println("Tens una doble parella de " + num2 + " i " +num);
+		} else {
+			if (dobleRepes > repes) {
+				System.out.println("Tens un full de " + num2 + " i " + num);
+			} else {
+				System.out.println("Tens una doble parella de " + num2 + " i " + num);
 			}
-			
+
 		}
 
 		return (repes) * num;
