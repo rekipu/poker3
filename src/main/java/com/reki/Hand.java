@@ -25,9 +25,9 @@ public class Hand {
 		int num = 0;
 		for (int i = 0; i < 5; i++) {
 			for (int r = i + 1; r < 5; r++) {
-				if (mano[i].numero == mano[r].numero&&mano[r].numero!=num) {
+				if (mano[i].getNumero() == mano[r].getNumero()&&mano[r].getNumero()!=num) {
 					repes++;
-					num = mano[i].numero;
+					num = mano[i].getNumero();
 
 				}
 			}

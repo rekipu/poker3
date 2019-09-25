@@ -1,8 +1,8 @@
 package com.reki;
 
 public class Carta {
-	int numero;
-	String palo;
+	private int numero;
+	private String palo;
 	
 	public int getNumero() {
 		return numero;
