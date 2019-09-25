@@ -22,41 +22,57 @@ public class Hand {
 
 	public int compruebaRepes(Carta[] mano) {
 		int repes = 1;
+		int dobleRepes = 1;
 		int num = 0;
+		int num2 = 0;
 		for (int i = 0; i < 5; i++) {
 			for (int r = i + 1; r < 5; r++) {
-				if (mano[i].getNumero() == mano[r].getNumero()&&mano[r].getNumero()!=num) {
-					repes++;
-					num = mano[i].getNumero();
+				if (mano[i].getNumero() == mano[r].getNumero() && mano[r].getNumero() != num) {
+					if (num == 0) {
+						repes++;
+						num = mano[i].getNumero();
+					} else {
+						dobleRepes++;
+						num2 = mano[i].getNumero();
+					}
 
 				}
 			}
 		}
-		switch (repes) {
-		case 1:
-			System.out.println("tienes farolillo real");
-			break;
-		case 2:
-			System.out.println("Tienes pareja de " + num);
-			break;
-		case 3:
-			System.out.println("Tienes trio de " + num);
-			break;
-		case 4:
-			System.out.println("Tienes poker de " + num);
-			break;
-		case 5:
-			System.out.println("Tienes repoker de " + num);
-			break;
+		if (dobleRepes == 1) {
+			switch (repes) {
+			case 1:
+				System.out.println("tienes farolillo real");
+				break;
+			case 2:
+				System.out.println("Tienes pareja de " + num);
+				break;
+			case 3:
+				System.out.println("Tienes trio de " + num);
+				break;
+			case 4:
+				System.out.println("Tienes poker de " + num);
+				break;
+			case 5:
+				System.out.println("Tienes repoker de " + num);
+				break;
+			}
+		}else {
+			if(dobleRepes>repes) {
+				System.out.println("Tens un full de " + num2 + " i " +num);
+			}else {
+				System.out.println("Tens una doble parella de " + num2 + " i " +num);
+			}
+			
 		}
 
 		return (repes) * num;
 	}
-	
-	public void compara(Carta[] mano,Carta[] mano2) {
-		if (punto(mano)>punto(mano2)) {
+
+	public void compara(Carta[] mano, Carta[] mano2) {
+		if (punto(mano) > punto(mano2)) {
 			System.out.println("guanya el jugador! FELICITATS!");
-		}else {
+		} else {
 			System.out.println("Te jodes, guanya la maquina!");
 		}
 	}

@@ -11,9 +11,11 @@ public class Poker2Application {
 		SpringApplication.run(Poker2Application.class, args);
 		
 		Baraja baraja = new Baraja();
+		for (int i=1;i<20; i++) {
 		Hand playerHand = new Hand(baraja);
 		Hand computerHand = new Hand(baraja);
-		playerHand.compara(playerHand.mano, computerHand.mano);
+		}
+		//playerHand.compara(playerHand.mano, computerHand.mano);
 		
 		
 	}
