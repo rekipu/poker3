@@ -21,4 +21,16 @@ public class Player {
 		this.name = name;
 		this.regDate = LocalDate.now();
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public LocalDate getRegDate() {
+		return regDate;
+	}
 }
