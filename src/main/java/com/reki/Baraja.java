@@ -6,10 +6,17 @@ import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class Baraja {
+	@Id
+	@GeneratedValue
+	int barajaId;
 	static ArrayList<Carta> baralla = new ArrayList<Carta>();
 	String palo;
 
